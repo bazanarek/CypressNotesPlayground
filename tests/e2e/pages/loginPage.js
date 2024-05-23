@@ -6,6 +6,7 @@ export class LoginPage {
     loginField = () => cy.findElementByTestData('login-email');
     passwordField = () => cy.findElementByTestData('login-password');
     submitLoginButton = () => cy.findElementByTestData('login-submit');
+    loginScreenText = () => cy.get('.container')
 
     visitUrl = () => {
         cy.visit(this.#url);
