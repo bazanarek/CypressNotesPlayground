@@ -1,6 +1,7 @@
 export class NotesMocks {
     #login = '/notes/api/users/login'
     #notes = '/notes/api/notes'
+    #noteDetails = 'notes/api/notes/*'
     
     login(statusCode, jsonResponse) {
         return cy.intercept('POST', this.#login, {
@@ -14,6 +15,20 @@ export class NotesMocks {
             fixture: 'someNotes.json',
             statusCode: 200
         });
+    }
+
+    noteDetails(statusCode, fixture) {
+        return cy.intercept('GET', this.#noteDetails, {
+            fixture: fixture,
+            statusCode: statusCode
+        })
+    }
+
+    noteUpdated(statusCode, fixture) {
+        return cy.intercept('PATCH', this.#noteDetails, {
+            fixture: fixture,
+            statusCode: statusCode
+        })
     }
 }
 
