@@ -2,8 +2,6 @@ import loginPage from "../pages/loginPage";
 import homePage from "../pages/homePage";
 import notesMocks from "../mocks/notesMocks";
 
-const loginSuccess = 'loginSuccess.json'
-
 Cypress.Commands.add('findElementByTestData', value => {
     Cypress.log({
       displayName: 'findElementByTestData',

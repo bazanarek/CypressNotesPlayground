@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+require("dotenv").config(); 
 
 module.exports = defineConfig({
   fixturesFolder: 'tests/e2e/fixtures',
@@ -10,9 +11,9 @@ module.exports = defineConfig({
     specPattern: 'tests/e2e/specs/**/*.cy.js',
     supportFile: 'tests/e2e/support/index.js',
     baseUrl: 'https://practice.expandtesting.com',
-    "env": {
-      "username": "testingfellow@gmail.com",
-      "password": "Pass99!"
+    env: {
+      username: process.env.CYPRESS_USERNAME,
+      password: process.env.CYPRESS_PASSWORD,
     }
   },
 });
